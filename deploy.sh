@@ -8,5 +8,5 @@ rm -rf $TOMCAT/wikipages
 mkdir $TOMCAT/wikipages
 
 cp WebContent/target/wikipages.war $TOMCAT/wikipages/
-unzip wikipages.war
+#unzip wikipages.war
 

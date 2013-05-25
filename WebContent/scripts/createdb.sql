@@ -37,7 +37,7 @@ create table wikipages (
 create table revisions (
     id              integer auto_increment primary key,
     wikipage_id     integer references wikipages(id),    
-    content         varchar(255),
+    content         varchar(10255),
     author_id       integer references users(id),
     time_stamp      timestamp
 );
@@ -57,5 +57,5 @@ insert into wikipages (path,view_counter) values ('index',0);
 
 -- 
 
-insert into revisions values (1, 1, '<big>Welcome to ialexan Wikipages. To see all the pages currently hosted on the wiki, please click on <a href="/wikipages/PageList">Page List</a>.</big><br /><br/>', 2, now());
+insert into revisions values (1, 1, '<h3>Welcome to ialexan Wikipages. To see all the pages currently hosted on the wiki, please click on <a href="/wikipages/PageList">Page List</a>.</h3><br /><br/>', 2, now());
 
