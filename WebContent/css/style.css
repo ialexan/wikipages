@@ -16,7 +16,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+figure, figcaption, footer, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video
 {
@@ -29,7 +29,7 @@ time, mark, audio, video
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section
+footer, hgroup, menu, nav, section
 {
 	display: block;
 }
@@ -67,7 +67,7 @@ table
 body
 {
 	font: 12px/1.5 "Century Gothic", "Helvetica", Arial, sans-serif;
-	background: #aaa;
+	background-color: #EEECEB;
 }
 
 a
@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6
 {
 	font-weight: normal;
 	padding: 0 0 10px;
-	color: #777;
+	/*color: #777;*/
 }
 
 h1
@@ -93,8 +93,7 @@ h1
 	font-weight: bold;
 	background: #27A;
 	margin: 0 -20px;
-	padding: 10px 20px;
-	box-shadow: 1px 0 2px #888;
+	padding: 10px 20px;	
 	color: white;
 }
 
@@ -157,7 +156,7 @@ h4
 #container
 {
 	width: 950px;
-	margin: 10px auto;
+	margin: 0px auto;
 	background: #fff;
 	padding: 20px;
 	box-shadow: 0 0 10px #555;
@@ -292,6 +291,51 @@ form input[type="submit"]
 {
 	color: #f00;
 	margin-bottom: 15px;
+}
+
+#course-question
+{
+	width: 600px;
+    margin: 5em auto;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 1em;
+    box-shadow: 0 0 10px #555;
+    font: 14px/1.5 "Century Gothic", "Helvetica", Arial, sans-serif;
+}
+
+header{
+	width: 960px;
+	background-color: #EEECEB;
+	margin: 0px auto;
+	height: 60px;
+}
+
+header h7{
+	font-size: 3.0em;
+	font-weight: bold;
+	color: #2277AA;
+	text-shadow: .2px .2px .3px #2277AA;
+	width: 200px;
+}
+
+header form {
+	padding-top: 17px;	
+	float: right;
+}
+
+header form label{
+	font-weight: normal;
+	width: auto;
+}
+
+header form input[type="submit"] {
+    margin-left: 0px;
+}
+
+textarea{
+	width: 700px; 
+	height: 362px;	
 }
 
 /* -- Page Specific Styles -- */

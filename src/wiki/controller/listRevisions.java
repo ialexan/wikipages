@@ -25,53 +25,46 @@ public class listRevisions extends HttpServlet {
 		super();
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 
-		String path = request.getParameter( "path" );
+		String path = request.getParameter("path");
 
 		ArrayList<Revision> revisions = new ArrayList<Revision>();
 
-        // Get all the revision of the path
-		Integer revisionId=0;
-		try
-		{
+		// Get all the revision of the path
+		Integer revisionId = 0;
+		try {
 			ConnectDb c = new ConnectDb();
-			
+
 			String sql = "select r.id from revisions r, wikipages w where w.path = ? and r.wikipage_id = w.id group by r.id;";
 
-			PreparedStatement pstmt = c.getConnected().prepareStatement( sql );
-			pstmt.setString( 1, path );
+			PreparedStatement pstmt = c.getConnected().prepareStatement(sql);
+			pstmt.setString(1, path);
 			ResultSet rs = pstmt.executeQuery();
 
-
-			while( rs.next() )
-			{
+			while (rs.next()) {
 				revisionId = rs.getInt("id");
 
-				revisions.add( new Revision(revisionId ) );
+				revisions.add(new Revision(revisionId));
 			}
 
 			c.getConnected().close();
-		}
-		catch( SQLException e )
-		{
-			throw new ServletException( e );
+		} catch (SQLException e) {
+			throw new ServletException(e);
 		}
 
+		request.setAttribute("revisions", revisions);
 
+		request.setAttribute("path", path);
 
-		request.setAttribute( "revisions", revisions );
-
-		request.setAttribute( "path", path);
-
-		request.getRequestDispatcher( "/WEB-INF/wiki/ListRevisions.jsp" ).forward(
-				request, response );
-
+		request.getRequestDispatcher("/WEB-INF/wiki/ListRevisions.jsp")
+				.forward(request, response);
 
 	}
 
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 

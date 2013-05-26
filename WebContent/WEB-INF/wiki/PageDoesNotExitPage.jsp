@@ -13,9 +13,6 @@
 </head>
 <body>
 
-
-
-<div id="container">
 	<div id="course-question">
 		The page &nbsp;
 		<i>${path}</i> &nbsp; does not exist. Do you want to create it?
@@ -23,9 +20,6 @@
 		<a href="${pageContext.request.contextPath}/AddEntry?path=${path}">Yes</a> |
 		<a href="${pageContext.request.contextPath}/wiki/index">No</a>
 	</div>
-</div>
-
-
 
 </body>
 </html>
