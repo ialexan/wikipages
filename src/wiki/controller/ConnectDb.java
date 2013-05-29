@@ -11,10 +11,10 @@ public class ConnectDb {
 	// Each Class will use this class to connect to the database
 	// so that you change database name in one place
 	public ConnectDb() {
-		String database = "jdbc:mysql://##########:3306/wiki"; 
+		String database = "jdbc:mysql://#####:3306/wiki"; 
 																
-		String username = "*****";
-		String password = "******";
+		String username = "########";
+		String password = "#####";
 
 		try {
 			connected = DriverManager.getConnection(database, username,

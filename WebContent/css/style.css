@@ -327,6 +327,11 @@ header form {
 header form label{
 	font-weight: normal;
 	width: auto;
+	margin-right: 0px;
+}
+
+header form input[type="search"]{
+	width: 140px;
 }
 
 header form input[type="submit"] {

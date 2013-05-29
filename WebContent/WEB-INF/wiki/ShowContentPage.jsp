@@ -19,7 +19,7 @@
 	<h7>Wikipages</h7>
 	<form method="POST" action="${pageContext.request.contextPath}/wiki/index">
 		<label for="newpage">Your page:</label>
-		<input type="text" name="newpage">
+		<input type="search" name="newpage">
 		<input type="submit" value="Search">
 	</form>
 </header> 
